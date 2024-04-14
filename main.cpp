@@ -77,6 +77,15 @@ int main()
 	std::cout << "Index row: " << index << std::endl;
 	std::cout << "SUM: " << sum << std::endl;
 
+	std::cout << "-------------------------" << std::endl << std::endl;
+
+	// test 17.5
+	std::cout << "Test 17.5: " << std::endl;
+	Vector v1;
+	v1.ShowVector();
+
+	Vector v2(2.0, 3.0, 4.0);
+	v2.ShowVector();
 
 	std::cout << "-------------------------" << std::endl << std::endl;
 	return 0;
