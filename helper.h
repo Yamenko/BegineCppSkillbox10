@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 
 
 int SqrSum(int a, int b)
@@ -56,4 +57,73 @@ private:
 	float x = 0.0f;
 	float y = 0.0f;
 	float z = 0.0f;
+};
+
+
+class Player
+{
+public:
+	Player() = default;
+	~Player() = default;
+
+	Player(std::string& name_){
+		SetName(name_);
+	}
+
+	std::string& GetName() { return name; }
+	int GetScore() { return score; }
+
+	void SetName(std::string& name_){
+		name = std::move(name_);
+	}
+
+	void SetScore(int s_){
+		score = s_;
+	}
+
+	friend  std::ostream& operator<<(std::ostream& out, Player& p){
+		out << "Player name: " << p.name << "\n";
+		out << "Player score: " << p.score << "\n";
+		return out;
+	}
+
+	bool operator<(Player& p){
+		return (this->score < p.GetScore());
+	}
+
+private:
+	std::string name = "";
+	int score = 0;
+};
+
+
+class Animal
+{
+public:
+	virtual ~Animal() {}
+
+	virtual void Voice() {}
+};
+
+class Dog : public Animal
+{
+public:
+	void Voice() override {
+		std::cout << "Woof!\n";
+	}
+};
+
+class Cat : public Animal
+{
+public:
+	void Voice() override {
+		std::cout << "Myau!\n";
+	}
+};
+
+class Fish : public Animal
+{
+	void Voice() override {
+		std::cout << "Boole!\n";
+	}
 };

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <time.h>
+#include <algorithm>
 
 #include "helper.h"
 
@@ -88,5 +89,53 @@ int main()
 	v2.ShowVector();
 
 	std::cout << "-------------------------" << std::endl << std::endl;
+
+	// test 18.5
+	std::cout << "Test 18.5: " << std::endl;
+	//int size_arr = 0;
+	//std::cout << "Enter the size array: ";
+	//std::cin >> size_arr;
+
+	//Player* players = new Player[size_arr];
+
+	//// Заполнение классов игроков
+	//for (int i = 0; i < size_arr; ++i){
+	//	std::string n = "";
+	//	std::cout << "Enter name player " << (i+1) << ": ";
+	//	std::cin >> n;
+	//	players[i].SetName(n);
+
+	//	int s = 0;
+	//	std::cout << "Enter score player " << (i + 1) << ": ";
+	//	std::cin >> s;
+	//	players[i].SetScore(s);
+	//}
+
+	//// сортировка
+	//std::sort(players, (players + size_arr));
+
+	//// вывод на экран игроков
+	//for (int i = 0; i < size_arr; ++i) {
+	//	std::cout << players[i];
+	//}
+
+	std::cout << "-------------------------" << std::endl << std::endl;
+
+
+	// test 19.5
+	std::cout << "Test 19.5: " << std::endl;
+
+	Animal** catalog = new Animal*[3];
+	catalog[0] = new Dog;
+	catalog[1] = new Cat;
+	catalog[2] = new Fish;
+
+	std::for_each(catalog, catalog + 3,
+		[](Animal* el) {el->Voice(); });
+
+
+
+	std::cout << "-------------------------" << std::endl << std::endl;
+
 	return 0;
 }
