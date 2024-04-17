@@ -20,8 +20,8 @@ int main()
 	std::cout << "Test14.4: " << std::endl;
 	std::cout << "String: " << name << std::endl;
 	std::cout << "Length: " << name.size() << std::endl;
-	std::cout << "First char: " << *name.begin() << std::endl;
-	std::cout << "Last  char: " << *(name.end() - 1) << std::endl;
+	std::cout << "First char: " << name.front() << std::endl;
+	std::cout << "Last  char: " << name.back() << std::endl;
 	std::cout << "-------------------------" << std::endl << std::endl;
 
 	// test 15.4
@@ -84,9 +84,12 @@ int main()
 	std::cout << "Test 17.5: " << std::endl;
 	Vector v1;
 	v1.ShowVector();
+	std::cout << "Modul vector: " << v1.ModulV() << std::endl;
 
 	Vector v2(2.0, 3.0, 4.0);
 	v2.ShowVector();
+	std::cout << "Modul vector: " << v2.ModulV() << std::endl;
+
 
 	std::cout << "-------------------------" << std::endl << std::endl;
 

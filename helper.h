@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+//#include <math.h>
 
 
 int SqrSum(int a, int b)
@@ -44,6 +45,8 @@ public:
 	void ShowVector(){
 		std::cout << "x: " << x << " y: " << y << " z: " << z << std::endl;
 	}
+
+	float ModulV() { return sqrtf(x * x + y * y + z * z); };
 
 	float GetX() { return x; }
 	float GetY() { return y; }
